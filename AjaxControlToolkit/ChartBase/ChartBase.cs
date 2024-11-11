@@ -10,7 +10,9 @@ using System.Web.UI.HtmlControls;
 namespace AjaxControlToolkit {
 
     [RequiredScript(typeof(CommonToolkitScripts))]
+#if NETFRAMEWORK
     [Designer(typeof(ChartBaseDesigner))]
+#endif
     public abstract class ChartBase : ScriptControlBase {
         protected string ContainerID;
 

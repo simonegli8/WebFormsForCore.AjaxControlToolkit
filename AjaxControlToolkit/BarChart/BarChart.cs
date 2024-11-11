@@ -49,7 +49,9 @@ namespace AjaxControlToolkit {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(null)]
         [NotifyParentProperty(true)]
+#if NETFRAMEWORK
         [Editor(typeof(ChartBaseSeriesEditor<BarChartSeries>), typeof(UITypeEditor))]
+#endif
         public List<BarChartSeries> Series {
             get { return _series; }
         }

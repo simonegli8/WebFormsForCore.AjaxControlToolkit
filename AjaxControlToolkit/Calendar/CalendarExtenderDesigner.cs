@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System.Web.UI.WebControls;
 using System.Web.UI;
 using System.Web.UI.Design;
@@ -10,3 +11,4 @@ namespace AjaxControlToolkit.Design {
     }
 
 }
+#endif

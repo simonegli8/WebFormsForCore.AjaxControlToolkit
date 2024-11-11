@@ -13,11 +13,13 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// TabContainer is an ASP.NET AJAX Control, which creates a set of tabs that can be
-    /// used to organize page content. TabContainer is a host for a number of TabPanel controls. 
-    /// </summary>
-    [Designer(typeof(TabContainerDesigner))]
+	/// <summary>
+	/// TabContainer is an ASP.NET AJAX Control, which creates a set of tabs that can be
+	/// used to organize page content. TabContainer is a host for a number of TabPanel controls. 
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(TabContainerDesigner))]
+#endif
     [ParseChildren(typeof(TabPanel))]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientCssResource(Constants.TabsName)]

@@ -14,7 +14,9 @@ namespace AjaxControlToolkit {
     /// The control that is extended then always moves to a fixed position 
     /// in the page regardless of how the body is resized or scrolled.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(AlwaysVisibleControlExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.AlwaysVisibleControlBehavior", Constants.AlwaysVisibleControlName)]
     [RequiredScript(typeof(AnimationScripts))]
     [DefaultProperty("VerticalOffset")]

@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 namespace AjaxControlToolkit.Design {
 
     public class UpdatePanelAnimationExtenderDesigner : ExtenderControlBaseDesigner<UpdatePanelAnimationExtender> {
@@ -5,3 +6,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

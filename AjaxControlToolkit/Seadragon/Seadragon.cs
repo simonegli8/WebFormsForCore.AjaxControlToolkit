@@ -353,14 +353,16 @@ namespace AjaxControlToolkit {
             set { SetPropertyValue<bool>("MouseNavEnabled", value); }
         }
 
-        /// <summary>
-        /// A path for all UI images. It can be absolute or relative. If it is
-        /// relative, it must be relative to an HTML page. This value change will affect
-        /// only new viewers. Default is img
-        /// </summary>
-        [EditorAttribute(typeof(SeadragonUrlEditor), typeof(UITypeEditor))]
+		/// <summary>
+		/// A path for all UI images. It can be absolute or relative. If it is
+		/// relative, it must be relative to an HTML page. This value change will affect
+		/// only new viewers. Default is img
+		/// </summary>
+#if NETFRAMEWORK
+		[EditorAttribute(typeof(SeadragonUrlEditor), typeof(UITypeEditor))]
+#endif
         public string SourceUrl {
-            get { return GetPropertyValue<string>("SourceUrl", String.Empty); }
+        get { return GetPropertyValue<string>("SourceUrl", String.Empty); }
             set { SetPropertyValue<string>("SourceUrl", value); }
         }
 
@@ -397,9 +399,11 @@ namespace AjaxControlToolkit {
         [PersistenceMode(PersistenceMode.InnerProperty)]
         [NotifyParentProperty(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor(typeof(OverlayCollectionEditor), typeof(UITypeEditor))]
+#if NETFRAMEWORK
+		[Editor(typeof(OverlayCollectionEditor), typeof(UITypeEditor))]
+#endif
         public List<SeadragonOverlay> OverlaysCollection {
-            get {
+        get {
                 if(_overlays == null)
                     _overlays = new List<SeadragonOverlay>();
 

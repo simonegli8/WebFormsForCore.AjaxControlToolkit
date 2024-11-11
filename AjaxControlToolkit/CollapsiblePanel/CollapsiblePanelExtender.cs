@@ -13,7 +13,9 @@ namespace AjaxControlToolkit {
     /// The panel that is extended can then be collapsed or expanded by the user of the page, which is handy
     /// for doing things like showing or hiding content or maximizing available space.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(CollapsiblePanelExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.CollapsiblePanelBehavior", Constants.CollapsiblePanelName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [RequiredScript(typeof(AnimationScripts))]

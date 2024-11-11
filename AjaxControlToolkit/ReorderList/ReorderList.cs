@@ -19,28 +19,30 @@ using BindingDirection = System.ComponentModel.BindingDirection;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// ReorderList is an ASP.NET AJAX control that implements a bulleted data-bound list with items that
-    /// can be reordered interactively. To reorder items in the list, a user simply drags the item's control
-    /// bar to its new location. Graphical feedback is shown where the item will be placed as it is dragged by
-    /// the user. The data source is updated after the item is dropped in its new location. 
-    /// </summary>
-    /// <remarks>
-    /// When bound to data, the ReorderList control will behave like many other databound controls. If data you are
-    /// displaying has a field that determines sort order (e.g. the select query is sorted by this column), and
-    /// that column is of an integer type, the ReorderList can automatically perform reorders if its SortOrderField
-    /// property is set. ReorderList can also be bound to a data source that implements IList (such as Arrays).
-    /// 
-    /// The ReorderList control is different than other samples because it is an ASP.NET server-side control that is
-    /// aware of ASP.NET AJAX behavior. Rather than extending existing controls on a page, it delivers rich client-side
-    /// experience directly and still has a traditional postback server model for interaction with an application.
-    /// 
-    /// ReorderList can handle reorders in two ways either via a callback or postback. In the case of a callback, no
-    /// page postback happens on reordering. This is useful if data is only to be ordered. If data items are to be
-    /// deleted or edited, a full postback needs to occur to sync the server side-state with the client0side state.
-    /// The PostbackOnReorder property enables this. 
-    /// </remarks>
-    [Designer(typeof(ReorderListDesigner))]
+	/// <summary>
+	/// ReorderList is an ASP.NET AJAX control that implements a bulleted data-bound list with items that
+	/// can be reordered interactively. To reorder items in the list, a user simply drags the item's control
+	/// bar to its new location. Graphical feedback is shown where the item will be placed as it is dragged by
+	/// the user. The data source is updated after the item is dropped in its new location. 
+	/// </summary>
+	/// <remarks>
+	/// When bound to data, the ReorderList control will behave like many other databound controls. If data you are
+	/// displaying has a field that determines sort order (e.g. the select query is sorted by this column), and
+	/// that column is of an integer type, the ReorderList can automatically perform reorders if its SortOrderField
+	/// property is set. ReorderList can also be bound to a data source that implements IList (such as Arrays).
+	/// 
+	/// The ReorderList control is different than other samples because it is an ASP.NET server-side control that is
+	/// aware of ASP.NET AJAX behavior. Rather than extending existing controls on a page, it delivers rich client-side
+	/// experience directly and still has a traditional postback server model for interaction with an application.
+	/// 
+	/// ReorderList can handle reorders in two ways either via a callback or postback. In the case of a callback, no
+	/// page postback happens on reordering. This is useful if data is only to be ordered. If data items are to be
+	/// deleted or edited, a full postback needs to occur to sync the server side-state with the client0side state.
+	/// The PostbackOnReorder property enables this. 
+	/// </remarks>
+#if NETFRAMEWORK
+	[Designer(typeof(ReorderListDesigner))]
+#endif
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.ReorderListName + Constants.IconPostfix)]
     public class ReorderList : CompositeDataBoundControl, IRepeatInfoUser, INamingContainer, ICallbackEventHandler, IPostBackEventHandler {
         static object ItemCommandKey = new object();

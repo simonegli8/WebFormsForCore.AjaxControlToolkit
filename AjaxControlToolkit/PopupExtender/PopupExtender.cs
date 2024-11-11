@@ -15,10 +15,12 @@ namespace AjaxControlToolkit {
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]
     [ToolboxItem(false)]
-    [Designer(typeof(PopupExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(PopupExtenderDesigner))]
+#endif
     public class PopupExtender : AnimationExtenderControlBase {
-        // Position the target with respect to this element
-        [ExtenderControlProperty]
+    // Position the target with respect to this element
+    [ExtenderControlProperty]
         [IDReferenceProperty]
         [RequiredProperty]
         [ClientPropertyName("parentElement")]

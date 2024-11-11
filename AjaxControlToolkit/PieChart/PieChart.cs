@@ -44,7 +44,9 @@ namespace AjaxControlToolkit {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(null)]
         [NotifyParentProperty(true)]
+#if NETFRAMEWORK
         [Editor(typeof(ChartBaseSeriesEditor<PieChartValue>), typeof(UITypeEditor))]
+#endif
         public List<PieChartValue> PieChartValues {
             get { return _values; }
         }

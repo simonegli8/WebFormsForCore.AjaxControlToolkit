@@ -8,14 +8,16 @@ using AjaxControlToolkit.Design;
 namespace AjaxControlToolkit {
 
 
-    /// <summary>
-    /// TextBoxWatermark is an ASP.NET AJAX extender that can be attached to an ASP.NET TextBox control
-    /// to get watermark behavior. When a watermarked TextBox is empty, it displays a message to a user
-    /// with a custom CSS style. Once the user has typed text into the TextBox, the watermarked appearance
-    /// disappears. The watermark is intended to provide more information to a user about the TextBox without
-    /// cluttering up the rest of the page.
-    /// </summary>
-    [Designer(typeof(TextBoxWatermarkExtenderDesigner))]
+	/// <summary>
+	/// TextBoxWatermark is an ASP.NET AJAX extender that can be attached to an ASP.NET TextBox control
+	/// to get watermark behavior. When a watermarked TextBox is empty, it displays a message to a user
+	/// with a custom CSS style. Once the user has typed text into the TextBox, the watermarked appearance
+	/// disappears. The watermark is intended to provide more information to a user about the TextBox without
+	/// cluttering up the rest of the page.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(TextBoxWatermarkExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.TextBoxWatermarkBehavior", Constants.TextBoxWatermarkName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [TargetControlType(typeof(TextBox))]

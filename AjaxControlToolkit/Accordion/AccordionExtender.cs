@@ -14,7 +14,9 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(AnimationScripts))]
     [ClientScriptResource("Sys.Extended.UI.AccordionBehavior", Constants.AccordionName)]
     [ToolboxItem(false)]
+#if NETFRAMEWORK
     [Designer(typeof(AccordionExtenderDesigner))]
+#endif
     [TargetControlType(typeof(Accordion))]
     public class AccordionExtender : ExtenderControlBase {
         public AccordionExtender() {

@@ -585,12 +585,14 @@ namespace AjaxControlToolkit.HtmlEditor {
             base.Render(writer);
         }
 
-        internal void CreateChilds(DesignerWithMapPath designer) {
+#if NETFRAMEWORK
+		internal void CreateChilds(DesignerWithMapPath designer) {
             CreateChildControls();
             TopToolbar.CreateChilds(designer);
             BottomToolbar.CreateChilds(designer);
             EditPanel.SetDesigner(designer);
         }
+#endif
 
         private sealed class EditorStyle : Style {
             public EditorStyle(StateBag state)

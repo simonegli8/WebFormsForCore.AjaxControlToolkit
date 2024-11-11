@@ -11,7 +11,9 @@ namespace AjaxControlToolkit {
     /// <summary>
     /// An extender used to play animations when a control's events fire.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(AnimationExtenderDesigner))]
+#endif
     [RequiredScript(typeof(AnimationScripts))]
     [ClientScriptResource("Sys.Extended.UI.Animation.AnimationBehavior", Constants.AnimationName)]
     [TargetControlType(typeof(WebControl))]

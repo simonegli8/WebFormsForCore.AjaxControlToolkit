@@ -8,7 +8,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
+#if NETFRAMEWORK
 using System.Web.UI.Design;
+#endif
 using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit.HtmlEditor {
@@ -31,7 +33,9 @@ namespace AjaxControlToolkit.HtmlEditor {
         bool _contentChanged;
         readonly ModePanel[] ModePanels = new ModePanel[] { new DesignPanel(), new HtmlPanel(), new PreviewPanel() };
         Collection<Toolbar> _toolbars;
-        ControlDesigner _designer;
+#if NETFRAMEWORK
+		ControlDesigner _designer;
+#endif
         IHtmlSanitizer _sanitizer;
         bool _enableSanitization = true;
         static readonly Lazy<Dictionary<string, string[]>> _elementWhiteList = new Lazy<Dictionary<string, string[]>>(MakeElementWhiteList, true);
@@ -308,8 +312,10 @@ namespace AjaxControlToolkit.HtmlEditor {
             get { return (ActiveModeType)(ViewState["ActiveMode"] ?? ActiveModeType.Design); }
             set {
                 ViewState["ActiveMode"] = value;
-                if(_designer != null && isDesign)
+#if NETFRAMEWORK
+				if (_designer != null && isDesign)
                     RefreshDesigner();
+#endif
             }
         }
 
@@ -413,16 +419,17 @@ namespace AjaxControlToolkit.HtmlEditor {
             get { return "_activeMode_" + ClientID; }
         }
 
-        protected void RefreshDesigner() {
+#if NETFRAMEWORK
+		protected void RefreshDesigner() {
             if(_designer != null && isDesign)
                 _designer.UpdateDesignTimeHtml();
         }
-
         public void SetDesigner(ControlDesigner designer) {
             _designer = designer;
         }
+#endif
 
-        protected string LocalResolveUrl(string path) {
+		protected string LocalResolveUrl(string path) {
             var temp = base.ResolveUrl(path);
             var _Regex = new Regex(@"(\(S\([A-Za-z0-9_]+\)\)/)", RegexOptions.Compiled);
             temp = _Regex.Replace(temp, String.Empty);

@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 namespace AjaxControlToolkit.Design {
 
     public class NumericUpDownExtenderDesigner : ExtenderControlBaseDesigner<NumericUpDownExtender> {
@@ -14,3 +15,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

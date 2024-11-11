@@ -9,11 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// ResizableControl is an extender that is attached to any element on a web page and allows a
-    /// user to resize that control with a handle attached to the lower-right corner of the control.
-    /// </summary>
-    [Designer(typeof(ResizableControlExtenderDesigner))]
+	/// <summary>
+	/// ResizableControl is an extender that is attached to any element on a web page and allows a
+	/// user to resize that control with a handle attached to the lower-right corner of the control.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(ResizableControlExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientScriptResource("Sys.Extended.UI.ResizableControlBehavior", Constants.ResizableControlName)]
     [TargetControlType(typeof(WebControl))]

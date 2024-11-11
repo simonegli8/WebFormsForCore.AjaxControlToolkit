@@ -9,18 +9,20 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// The Slider extender allows upgrading an asp:TextBox to a graphical slider that allows
-    /// a user to choose a numeric value from a finite range.
-    /// </summary>
-    /// <remarks>
-    /// By declaring the extended TextBox as a trigger for an UpdatePanel, the Slider can fire the
-    /// update whenever the handle is released. By setting RaiseChangeOnlyOnMouseUp to false, the
-    /// update will be fired as soon as the Slider's value changes. The TooltipText property allows
-    /// displaying some text when the mouse pointer hovers the slider's handle. A {0} placeholder
-    /// in the text is replaced by the current value of the slider.
-    /// </remarks>
-    [Designer(typeof(SliderDesigner))]
+	/// <summary>
+	/// The Slider extender allows upgrading an asp:TextBox to a graphical slider that allows
+	/// a user to choose a numeric value from a finite range.
+	/// </summary>
+	/// <remarks>
+	/// By declaring the extended TextBox as a trigger for an UpdatePanel, the Slider can fire the
+	/// update whenever the handle is released. By setting RaiseChangeOnlyOnMouseUp to false, the
+	/// update will be fired as soon as the Slider's value changes. The TooltipText property allows
+	/// displaying some text when the mouse pointer hovers the slider's handle. A {0} placeholder
+	/// in the text is replaced by the current value of the slider.
+	/// </remarks>
+#if NETFRAMEWORK
+	[Designer(typeof(SliderDesigner))]
+#endif
     [ClientCssResource(Constants.SliderName)]
     [ClientScriptResource("Sys.Extended.UI.SliderBehavior", Constants.SliderName)]
     [RequiredScript(typeof(CommonToolkitScripts))]

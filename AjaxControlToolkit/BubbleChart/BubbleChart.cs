@@ -43,7 +43,9 @@ namespace AjaxControlToolkit {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(null)]
         [NotifyParentProperty(true)]
+#if NETFRAMEWORK
         [Editor(typeof(ChartBaseSeriesEditor<BubbleChartValue>), typeof(UITypeEditor))]
+#endif
         public List<BubbleChartValue> BubbleChartValues {
             get { return _values; }
         }

@@ -9,26 +9,28 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// NoBot is a control that prevents CAPTCHA-like bot/spam without user interactions. This approach is
-    /// easier to bypass than the implementation that requires actual human intervention, but NoBot has the
-    /// benefit of being completely invisible. NoBot is probably most relevant for low-traffic sites where
-    /// blog/comment spam is a problem and 100% effectiveness is not required.
-    /// </summary>
-    /// <remarks>
-    /// NoBot employs a few different anti-bot techniques:
-    /// * Forcing the client's browser to perform a configurable JavaScript calculation and verifying the result
-    ///   as part of a postback. For example, the calculation may be simple numeric or may involve the DOM for
-    ///   added assurance that a browser is involved
-    /// * Enforcing a configurable delay between a request sent to a form and the time it can be posted back.
-    ///   For example, a human is unlikely to complete a form in less than two seconds 
-    /// * Enforcing a configurable limit to the number of acceptable requests for each IP address per unit of
-    ///   time. For example, a human is unlikely to submit the same form more than five times in a minute.
-    /// 
-    /// NoBot can be tested by violating any of the above mentioned techniques: posting back quickly,
-    /// posting back many times, or disabling JavaScript in the browser.
-    /// </remarks>
-    [Designer(typeof(NoBotExtenderDesigner))]
+	/// <summary>
+	/// NoBot is a control that prevents CAPTCHA-like bot/spam without user interactions. This approach is
+	/// easier to bypass than the implementation that requires actual human intervention, but NoBot has the
+	/// benefit of being completely invisible. NoBot is probably most relevant for low-traffic sites where
+	/// blog/comment spam is a problem and 100% effectiveness is not required.
+	/// </summary>
+	/// <remarks>
+	/// NoBot employs a few different anti-bot techniques:
+	/// * Forcing the client's browser to perform a configurable JavaScript calculation and verifying the result
+	///   as part of a postback. For example, the calculation may be simple numeric or may involve the DOM for
+	///   added assurance that a browser is involved
+	/// * Enforcing a configurable delay between a request sent to a form and the time it can be posted back.
+	///   For example, a human is unlikely to complete a form in less than two seconds 
+	/// * Enforcing a configurable limit to the number of acceptable requests for each IP address per unit of
+	///   time. For example, a human is unlikely to submit the same form more than five times in a minute.
+	/// 
+	/// NoBot can be tested by violating any of the above mentioned techniques: posting back quickly,
+	/// posting back many times, or disabling JavaScript in the browser.
+	/// </remarks>
+#if NETFRAMEWORK
+	[Designer(typeof(NoBotExtenderDesigner))]
+#endif
     [DefaultEvent("GenerateChallengeAndResponse")]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.NoBotName + Constants.IconPostfix)]
     public class NoBot : WebControl, INamingContainer {

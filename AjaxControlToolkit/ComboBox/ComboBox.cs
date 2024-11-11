@@ -11,7 +11,9 @@ using System.Reflection;
 using System.Security.Permissions;
 using System.Web;
 using System.Web.UI;
+#if NETFRAMEWORK
 using System.Web.UI.Design.WebControls;
+#endif
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
@@ -24,9 +26,11 @@ namespace AjaxControlToolkit {
     [ValidationProperty("SelectedItem")]
     [AspNetHostingPermission(SecurityAction.LinkDemand, Level = AspNetHostingPermissionLevel.Minimal)]
     [AspNetHostingPermission(SecurityAction.InheritanceDemand, Level = AspNetHostingPermissionLevel.Minimal)]
-    [Designer(typeof(ComboBoxDesigner))]
-    [Bindable(true, BindingDirection.TwoWay)]
+	[Bindable(true, BindingDirection.TwoWay)]
+#if NETFRAMEWORK
+	[Designer(typeof(ComboBoxDesigner))]
     [DataBindingHandler(typeof(ListControlDataBindingHandler))]
+#endif
     [DefaultEvent("SelectedIndexChanged")]
     [DefaultProperty("SelectedValue")]
     [ControlValueProperty("SelectedValue")]

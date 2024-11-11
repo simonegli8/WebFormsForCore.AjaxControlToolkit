@@ -17,7 +17,9 @@ namespace AjaxControlToolkit {
     /// for a particular user and the Search mode for showing tweets that match a search string. 
     /// </summary>
     [ClientCssResource(Constants.TwitterName)]
-    [Designer(typeof(TwitterDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(TwitterDesigner))]
+#endif
     [System.Drawing.ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.TwitterName + Constants.IconPostfix)]
     public class Twitter : CompositeControl {
 

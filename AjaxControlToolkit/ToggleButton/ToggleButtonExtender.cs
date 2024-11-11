@@ -6,12 +6,14 @@ using System.Web.UI;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// ToggleButton is an ASP.NET AJAX extender that can be attached to an ASP.NET CheckBox control.
-    /// ToggleButton enables the use of custom images to show the state of the CheckBox.
-    /// The behavior of the CheckBox is unaffected.
-    /// </summary>
-    [Designer(typeof(ToggleButtonExtenderDesigner))]
+	/// <summary>
+	/// ToggleButton is an ASP.NET AJAX extender that can be attached to an ASP.NET CheckBox control.
+	/// ToggleButton enables the use of custom images to show the state of the CheckBox.
+	/// The behavior of the CheckBox is unaffected.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(ToggleButtonExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.ToggleButtonBehavior", Constants.ToggleButtonName)]
     [TargetControlType(typeof(ICheckBoxControl))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.ToggleButtonName + Constants.IconPostfix)]

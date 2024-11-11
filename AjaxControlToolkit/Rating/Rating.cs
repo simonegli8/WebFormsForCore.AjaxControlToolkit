@@ -12,7 +12,9 @@ namespace AjaxControlToolkit {
     /// The Rating control provides intuitive rating experience that allows users to select the number of stars that represents their rating
     /// </summary>
     [NonVisualControl, ToolboxData("<{0}:Rating runat=\"server\"></{0}:Rating>")]
-    [DesignerAttribute(typeof(RatingExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(RatingExtenderDesigner))]
+#endif
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.RatingName + Constants.IconPostfix)]
     public class Rating : Panel, ICallbackEventHandler, IPostBackEventHandler {
         static readonly object EventChange = new object();

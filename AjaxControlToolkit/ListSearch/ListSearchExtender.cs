@@ -18,7 +18,9 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(CommonToolkitScripts), 0)]
     [RequiredScript(typeof(PopupControlExtender), 1)]
     [RequiredScript(typeof(AnimationExtender), 2)]
-    [Designer(typeof(ListSearchExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(ListSearchExtenderDesigner))]
+#endif
     [Description("Lets users search incrementally within ListBoxes")]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.ListSearchName + Constants.IconPostfix)]
     public class ListSearchExtender : AnimationExtenderControlBase {

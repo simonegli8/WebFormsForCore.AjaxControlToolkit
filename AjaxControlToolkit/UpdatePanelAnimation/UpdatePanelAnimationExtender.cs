@@ -8,11 +8,13 @@ using System.Collections.Generic;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// UpdatePanelAnimationExtender is an extender that allows you to play animations both while an UpdatePanel
-    /// is updating and after its update is finished. The animations to be played are declaratively specified by using XML.
-    /// </summary>
-    [Designer(typeof(UpdatePanelAnimationExtenderDesigner))]
+	/// <summary>
+	/// UpdatePanelAnimationExtender is an extender that allows you to play animations both while an UpdatePanel
+	/// is updating and after its update is finished. The animations to be played are declaratively specified by using XML.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(UpdatePanelAnimationExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts), 0)]
     [RequiredScript(typeof(AnimationScripts), 1)]
     [RequiredScript(typeof(AnimationExtender), 2)]

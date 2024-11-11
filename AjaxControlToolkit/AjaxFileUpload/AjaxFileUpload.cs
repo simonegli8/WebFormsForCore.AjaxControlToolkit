@@ -17,7 +17,9 @@ namespace AjaxControlToolkit {
     /// <summary>
     /// AjaxFileUpload is an ASP.NET AJAX Control that allows you to asynchronously upload files to the server.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(AjaxFileUploadDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientCssResource(Constants.AjaxFileUploadName)]
     [ClientScriptResource("Sys.Extended.UI.AjaxFileUpload.Control", Constants.AjaxFileUploadName)]

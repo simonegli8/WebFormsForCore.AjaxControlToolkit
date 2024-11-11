@@ -7,10 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// DropShadow is an extender that applies drop shadow to an ASP.NET Panel control.
-    /// </summary>
-    [Designer(typeof(DropShadowExtenderDesigner))]
+	/// <summary>
+	/// DropShadow is an extender that applies drop shadow to an ASP.NET Panel control.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(DropShadowExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.DropShadowBehavior", Constants.DropShadowName)]
     [RequiredScript(typeof(CommonToolkitScripts), 1)]
     [RequiredScript(typeof(RoundedCornersExtender), 2)]

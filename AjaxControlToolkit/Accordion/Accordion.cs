@@ -15,13 +15,15 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// The Accordion control represents a series of panes that can be viewed
-    /// one at a time.  The control is used to create "strongly typed" access
-    /// to the AccordionBehavior.  Its major purpose is to structure the content
-    /// in a way that the AccordionBehavior can understand it. 
-    /// </summary>
-    [Designer(typeof(AccordionDesigner))]
+	/// <summary>
+	/// The Accordion control represents a series of panes that can be viewed
+	/// one at a time.  The control is used to create "strongly typed" access
+	/// to the AccordionBehavior.  Its major purpose is to structure the content
+	/// in a way that the AccordionBehavior can understand it. 
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(AccordionDesigner))]
+#endif
     [ToolboxData("<{0}:Accordion runat=server></{0}:Accordion>")]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.AccordionName + Constants.IconPostfix)]
     public class Accordion : WebControl {
