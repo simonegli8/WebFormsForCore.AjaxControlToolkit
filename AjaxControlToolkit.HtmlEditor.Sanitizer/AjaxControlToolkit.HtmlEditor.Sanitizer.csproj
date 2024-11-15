@@ -10,6 +10,29 @@
         <OutputPath Condition="$(TargetFramework) != 'net48'">$(GlobalOutputPath)$(TargetFramework)\</OutputPath>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>..\AjaxKey.snk</AssemblyOriginatorKeyFile>
+        <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
+
+        <PackageId>EstrellasDeEsperanza.WebFormsForCore.AjaxControlToolkit.HtmlEditor.Sanitizer</PackageId>
+        <Title>AjaxControlToolkit</Title>
+        <Authors>simonegli8</Authors>
+        <Company>Estrellas de Esperanza</Company>
+        <Product>AjaxControlToolkit</Product>
+        <Description>AjaxControlToolkit for WebFormsForCore</Description>
+        <Copyright>Estrellas de Esperanza</Copyright>
+        <PackageProjectUrl>https://github.com/simonegli8/WebFormsForCore</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl> https://github.com/simonegli8/WebFormsForCore</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>WebForms;porting WebForms;NET Core;NET 8</PackageTags>
+        <AssemblyVersion>8.0.0.0</AssemblyVersion>
+        <FileVersion>8.0.0.0</FileVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeSymbols>true</IncludeSymbols>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="HtmlAgilityPack" Version="1.11.70" />
@@ -19,8 +42,10 @@
         <Reference Include="System.Web" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.1.2-beta" />
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.1.2-beta" />
+        <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.1.2-beta" />
+        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.1.2-beta" />-->
+        <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
+        <ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
@@ -28,4 +53,12 @@
     <ItemGroup>
         <ProjectReference Include="..\AjaxControlToolkit\AjaxControlToolkit.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
 </Project>

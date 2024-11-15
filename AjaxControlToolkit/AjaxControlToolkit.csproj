@@ -10,6 +10,7 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
         <NoWarn>1591</NoWarn>
+        <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
         <OutputPath>$(GlobalOutputPath)</OutputPath>
         <TargetDir>$(MSBuildProjectDirectory)\$(GlobalOutputPath)\</TargetDir>
         <PostBuildEvent>
@@ -24,6 +25,27 @@
             "$(TargetDir)LinkStaticResources"
             copy "$(TargetDir)AjaxControlToolkit.xml" ""$(TargetDir)\.."
         </PostBuildEvent>
+
+        <PackageId>EstrellasDeEsperanza.WebFormsForCore.AjaxControlToolkit</PackageId>
+        <Title>AjaxControlToolkit</Title>
+        <Authors>simonegli8</Authors>
+        <Company>Estrellas de Esperanza</Company>
+        <Product>AjaxControlToolkit</Product>
+        <Description>AjaxControlToolkit for WebFormsForCore</Description>
+        <Copyright>Estrellas de Esperanza</Copyright>
+        <PackageProjectUrl>https://github.com/simonegli8/WebFormsForCore</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl> https://github.com/simonegli8/WebFormsForCore</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>WebForms;porting WebForms;NET Core;NET 8</PackageTags>
+        <AssemblyVersion>8.0.0.0</AssemblyVersion>
+        <FileVersion>8.0.0.0</FileVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeSymbols>true</IncludeSymbols>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugType>full</DebugType>
@@ -46,14 +68,17 @@
         <Reference Include="System.Web.Extensions.Design" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.1.2-beta" />
+        <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.1.2-beta" />
         <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Extensions" Version="1.1.2-beta" />
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.1.2-beta" />
+        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.1.2-beta" /6-->
         <PackageReference Include="System.Drawing.Common" Version="8.0.10" Aliases="Legacy" />
+        <ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />
+        <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
+        <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
     </ItemGroup>
     <PropertyGroup Condition="$(TargetFramework) != 'net48'">
         <OutputPath>..\bin\$(Configuration)\$(TargetFramework)</OutputPath>
-    </PropertyGroup> 
+    </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
     </ItemGroup>
@@ -1033,4 +1058,23 @@
     <ItemGroup>
         <EmbeddedResource Include="Styles\HtmlEditor.DesignPanel.css" />
     </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+        <ItemGroup>
+            <!-- Do not import System.Configuration.ConfigurationManager version 8 -->
+            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Configuration.ConfigurationManager' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\8.0.0\\'))" />
+            <!-- Do not import System.Web from dotnet -->
+            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Web' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\dotnet\\'))" />
+            <!-- Do not import System.Drawing from dotnet -->
+            <!--<ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Drawing' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\dotnet\\'))" />-->
+        </ItemGroup>
+    </Target>
+
 </Project>
