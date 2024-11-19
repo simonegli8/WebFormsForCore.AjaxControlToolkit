@@ -71,7 +71,7 @@
         <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.1.2-beta" />
         <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Extensions" Version="1.1.2-beta" />
         <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.1.2-beta" /6-->
-        <PackageReference Include="System.Drawing.Common" Version="8.0.10" Aliases="Legacy" />
+        <PackageReference Include="System.Drawing.Common" Version="8.0.11" Aliases="Legacy" />
         <ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
