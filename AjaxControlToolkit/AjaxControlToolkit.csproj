@@ -33,9 +33,9 @@
         <Product>AjaxControlToolkit</Product>
         <Description>AjaxControlToolkit for WebFormsForCore</Description>
         <Copyright>Estrellas de Esperanza</Copyright>
-        <PackageProjectUrl>https://github.com/simonegli8/WebFormsForCore.AjaxControlToolkit</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/simonegli8/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
+        <RepositoryUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>WebForms;porting WebForms;NET Core;NET 8</PackageTags>
         <AssemblyVersion>8.0.0.0</AssemblyVersion>
