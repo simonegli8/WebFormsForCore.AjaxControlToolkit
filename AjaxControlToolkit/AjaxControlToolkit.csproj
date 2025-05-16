@@ -13,7 +13,7 @@
         <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
         <OutputPath>$(GlobalOutputPath)</OutputPath>
         <TargetDir>$(MSBuildProjectDirectory)\$(GlobalOutputPath)\</TargetDir>
-        <PostBuildEvent>
+        <!--<PostBuildEvent>
             "$(TargetDir)LinkStaticResources"
             copy "$(TargetDir)AjaxControlToolkit.xml" ""$(TargetDir)\.."
         </PostBuildEvent>
@@ -24,7 +24,7 @@
         <PostBuildEvent>
             "$(TargetDir)LinkStaticResources"
             copy "$(TargetDir)AjaxControlToolkit.xml" ""$(TargetDir)\.."
-        </PostBuildEvent>
+        </PostBuildEvent>-->
 
         <PackageId>EstrellasDeEsperanza.WebFormsForCore.AjaxControlToolkit</PackageId>
         <Title>AjaxControlToolkit</Title>
@@ -48,10 +48,10 @@
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugType>full</DebugType>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugType>pdbonly</DebugType>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
     <PropertyGroup>
         <PostBuildEvent>

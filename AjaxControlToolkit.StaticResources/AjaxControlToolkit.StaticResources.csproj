@@ -33,7 +33,6 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-
     </PropertyGroup>
     <ItemGroup Condition="$(TargetFramework) == 'net48'">
         <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />

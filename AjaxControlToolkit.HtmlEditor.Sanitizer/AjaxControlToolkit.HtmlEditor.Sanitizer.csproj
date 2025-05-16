@@ -32,7 +32,6 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="HtmlAgilityPack" Version="1.12.1" />
