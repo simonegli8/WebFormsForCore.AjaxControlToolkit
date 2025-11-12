@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <ProjectGuid>{4F19469B-3352-4D93-89E2-4B79FD7086A6}</ProjectGuid>
-        <TargetFrameworks>net48;net8.0</TargetFrameworks>
+        <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GlobalOutputPath>..\bin\$(Configuration)\</GlobalOutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -24,8 +24,8 @@
         <RepositoryUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>WebForms;porting WebForms;NET Core;NET 8</PackageTags>
-        <AssemblyVersion>8.0.13.0</AssemblyVersion>
-        <FileVersion>8.0.13.0</FileVersion>
+        <AssemblyVersion>10.0.13.0</AssemblyVersion>
+        <FileVersion>10.0.13.0</FileVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeSymbols>true</IncludeSymbols>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
