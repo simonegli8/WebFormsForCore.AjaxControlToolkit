@@ -25,12 +25,14 @@ namespace AjaxControlToolkit {
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.HoverMenuName + Constants.IconPostfix)]
-    [Designer(typeof(HoverMenuExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(HoverMenuExtenderDesigner))]
+#endif
     public class HoverMenuExtender : DynamicPopulateExtenderControlBase {
-        /// <summary>
-        /// A control's ID to display when the mouse is over the target control. 
-        /// </summary>
-        [ExtenderControlProperty]
+    /// <summary>
+    /// A control's ID to display when the mouse is over the target control. 
+    /// </summary>
+    [ExtenderControlProperty]
         [RequiredProperty]
         [IDReferenceProperty(typeof(WebControl))]
         [ElementReference]

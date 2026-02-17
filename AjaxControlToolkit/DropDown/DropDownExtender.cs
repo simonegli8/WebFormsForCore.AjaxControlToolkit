@@ -19,7 +19,9 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(AnimationExtender))]
     [ClientCssResource(Constants.DropDownName)]
     [ClientScriptResource("Sys.Extended.UI.DropDownBehavior", Constants.DropDownName)]
-    [Designer(typeof(DropDownExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(DropDownExtenderDesigner))]
+#endif
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.DropDownName + Constants.IconPostfix)]
     public class DropDownExtender : DynamicPopulateExtenderControlBase {
         /// <summary>

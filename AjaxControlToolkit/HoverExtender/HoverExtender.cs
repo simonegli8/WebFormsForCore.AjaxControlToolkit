@@ -7,7 +7,9 @@ using System.Web.UI.HtmlControls;
 
 namespace AjaxControlToolkit {
 
-    [Designer(typeof(HoverExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(HoverExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.HoverBehavior", Constants.HoverName)]
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]

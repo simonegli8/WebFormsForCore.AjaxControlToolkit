@@ -15,7 +15,9 @@ namespace AjaxControlToolkit {
     /// AsyncFileUpload is an ASP.NET AJAX Control that allows you to asynchronously upload files to the server.
     /// The file uploading results can be checked both on the server and client sides.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(AsyncFileUploadDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientScriptResource("Sys.Extended.UI.AsyncFileUpload", AjaxControlToolkit.Constants.AsyncFileUploadName)]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), AjaxControlToolkit.Constants.AsyncFileUploadName + AjaxControlToolkit.Constants.IconPostfix)]

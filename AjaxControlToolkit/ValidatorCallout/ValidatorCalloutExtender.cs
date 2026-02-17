@@ -8,11 +8,13 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// ValidatorCallout is an ASP.NET AJAX extender that enhances the functionality
-    /// of existing ASP.NET validators.
-    /// </summary>    
-    [Designer(typeof(ValidatorCalloutExtenderDesigner))]
+	/// <summary>
+	/// ValidatorCallout is an ASP.NET AJAX extender that enhances the functionality
+	/// of existing ASP.NET validators.
+	/// </summary>    
+#if NETFRAMEWORK
+	[Designer(typeof(ValidatorCalloutExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [RequiredScript(typeof(PopupExtender))]
     [RequiredScript(typeof(AnimationExtender))]

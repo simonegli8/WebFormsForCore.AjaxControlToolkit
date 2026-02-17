@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Web.UI.Design;
@@ -112,3 +113,4 @@ namespace AjaxControlToolkit.Design {
     }
 
 }
+#endif

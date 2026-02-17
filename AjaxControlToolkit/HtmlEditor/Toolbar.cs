@@ -142,7 +142,8 @@ namespace AjaxControlToolkit.HtmlEditor {
             base.Render(writer);
         }
 
-        internal void CreateChilds(DesignerWithMapPath designer) {
+#if NETFRAMEWORK
+		internal void CreateChilds(DesignerWithMapPath designer) {
             Controls.Clear();
             CreateChildControls();
 
@@ -152,6 +153,7 @@ namespace AjaxControlToolkit.HtmlEditor {
                     button.CreateChilds(designer);
             }
         }
+#endif
     }
 
 }

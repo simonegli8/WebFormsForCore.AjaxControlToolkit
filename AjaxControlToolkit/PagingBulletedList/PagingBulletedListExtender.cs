@@ -7,13 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// PagingBulletedList is an ASP.NET AJAX extender that can be attached to an ASP.NET BulletedList control
-    /// and provide client-side sorted paging. It is very flexible and lets you specify either the number of
-    /// characters used in the heading indices or the maximum number of items to display per index. If the
-    /// input is not sorted (either on the server or client), it will generate more header indices but still function appropriately.
-    /// </summary>
-    [Designer(typeof(PagingBulletedListExtenderDesigner))]
+	/// <summary>
+	/// PagingBulletedList is an ASP.NET AJAX extender that can be attached to an ASP.NET BulletedList control
+	/// and provide client-side sorted paging. It is very flexible and lets you specify either the number of
+	/// characters used in the heading indices or the maximum number of items to display per index. If the
+	/// input is not sorted (either on the server or client), it will generate more header indices but still function appropriately.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(PagingBulletedListExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.PagingBulletedListBehavior", Constants.PagingBulletedListName)]
     [TargetControlType(typeof(System.Web.UI.WebControls.BulletedList))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.PagingBulletedListName + Constants.IconPostfix)]

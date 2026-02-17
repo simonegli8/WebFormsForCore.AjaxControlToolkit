@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 namespace AjaxControlToolkit.Design {
 
     public class SlideShowExtenderDesigner : ExtenderControlBaseDesigner<SlideShowExtender> {
@@ -11,3 +12,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

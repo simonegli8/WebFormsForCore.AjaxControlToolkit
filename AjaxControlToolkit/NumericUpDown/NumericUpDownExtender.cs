@@ -8,14 +8,16 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// NumericUpDown is an ASP.NET AJAX extender that can be attached to an ASP.NET TextBox control to
-    /// add the up and down buttons that increment and decrement a value in the TextBox. The increment
-    /// and decrement actions can be simple +1/-1 arithmetic, cycle through the provided list of values
-    /// (like months of the year), or call a Web Service to determine the next value. Page authors can also
-    /// provide custom images to be used instead of the default up/down button graphics.
-    /// </summary>
-    [Designer(typeof(NumericUpDownExtenderDesigner))]
+	/// <summary>
+	/// NumericUpDown is an ASP.NET AJAX extender that can be attached to an ASP.NET TextBox control to
+	/// add the up and down buttons that increment and decrement a value in the TextBox. The increment
+	/// and decrement actions can be simple +1/-1 arithmetic, cycle through the provided list of values
+	/// (like months of the year), or call a Web Service to determine the next value. Page authors can also
+	/// provide custom images to be used instead of the default up/down button graphics.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(NumericUpDownExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientCssResource(Constants.NumericUpDownName)]
     [ClientScriptResource("Sys.Extended.UI.NumericUpDownBehavior", Constants.NumericUpDownName)]

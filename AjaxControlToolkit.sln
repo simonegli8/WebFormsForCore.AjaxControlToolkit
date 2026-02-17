@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxControlToolkit", "AjaxControlToolkit\AjaxControlToolkit.csproj", "{676B3449-93F7-4102-8DF0-FB51911675D6}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -21,7 +21,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AjaxControlToolkit.SampleSite", "http://localhost:49290", "{5B8E3F7D-A045-46D2-9EA0-D5AEC3152504}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
 		ProjectReferences = "{676b3449-93f7-4102-8df0-fb51911675d6}|AjaxControlToolkit.dll;{4f19469b-3352-4d93-89e2-4b79fd7086a6}|AjaxControlToolkit.HtmlEditor.Sanitizer.dll;{820694df-c225-46b6-ba38-c5fefbd79aeb}|AjaxControlToolkit.StaticResources.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/AjaxControlToolkit.SampleSite"
 		Debug.AspNetCompiler.PhysicalPath = "AjaxControlToolkit.SampleSite\"
@@ -107,5 +107,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E5548D5-7BCD-431C-BFF2-21A13BCFB467}
 	EndGlobalSection
 EndGlobal

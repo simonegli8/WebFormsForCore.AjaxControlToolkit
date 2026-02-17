@@ -12,7 +12,9 @@ namespace AjaxControlToolkit {
     /// The Calendar control extender can be attached to any ASP.NET TextBox control. 
     /// It provides client-side date-picking functionality with a customizable date format and UI in a popup control.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(CalendarExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts), 0)]
     [RequiredScript(typeof(DateTimeScripts), 1)]
     [RequiredScript(typeof(PopupExtender), 2)]

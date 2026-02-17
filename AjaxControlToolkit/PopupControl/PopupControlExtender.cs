@@ -22,7 +22,9 @@ namespace AjaxControlToolkit {
     [RequiredScript(typeof(CommonToolkitScripts))]
     [TargetControlType(typeof(WebControl))]
     [TargetControlType(typeof(HtmlControl))]
-    [Designer(typeof(PopupControlExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(PopupControlExtenderDesigner))]
+#endif
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.PopupControlName + Constants.IconPostfix)]
     public class PopupControlExtender : DynamicPopulateExtenderControlBase {
         bool _shouldClose;

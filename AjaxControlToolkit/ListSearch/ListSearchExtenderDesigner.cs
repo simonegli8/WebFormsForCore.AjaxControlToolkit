@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 namespace AjaxControlToolkit.Design {
 
     public class ListSearchExtenderDesigner : ExtenderControlBaseDesigner<ListSearchExtender> {
@@ -5,3 +6,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

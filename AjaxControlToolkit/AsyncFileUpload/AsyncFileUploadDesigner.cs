@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -25,3 +26,4 @@ namespace AjaxControlToolkit.Design {
     }
 
 }
+#endif

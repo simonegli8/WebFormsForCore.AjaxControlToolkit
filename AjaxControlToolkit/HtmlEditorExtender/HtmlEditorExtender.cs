@@ -88,7 +88,9 @@ namespace AjaxControlToolkit {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(null)]
         [NotifyParentProperty(true)]
+#if NETFRAMEWORK
         [Editor(typeof(HtmlEditorExtenderButtonCollectionEditor), typeof(UITypeEditor))]
+#endif
         [Description("Costumize visible buttons, leave empty to show all buttons")]
         public HtmlEditorExtenderButtonCollection Toolbar {
             get {

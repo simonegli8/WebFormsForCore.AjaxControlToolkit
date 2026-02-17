@@ -10,14 +10,16 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// The MultiHandleSlider extender provides a feature-rich extension to a regular asp:Textbox control.
-    /// It allows you to choose a single value or multiple values in a range through a graphical slider
-    /// interface. It supports one handle, dual handles, or any number of handles bound to values of the
-    /// asp:TextBox or asp:Label controls. It also provides options for read-only access, custom graphic
-    /// styling, hover and drag handle styles, as well as the mouse and keyboard support for accessibility.
-    /// </summary>
-    [Designer(typeof(MultiHandleSliderExtenderDesigner))]
+	/// <summary>
+	/// The MultiHandleSlider extender provides a feature-rich extension to a regular asp:Textbox control.
+	/// It allows you to choose a single value or multiple values in a range through a graphical slider
+	/// interface. It supports one handle, dual handles, or any number of handles bound to values of the
+	/// asp:TextBox or asp:Label controls. It also provides options for read-only access, custom graphic
+	/// styling, hover and drag handle styles, as well as the mouse and keyboard support for accessibility.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(MultiHandleSliderExtenderDesigner))]
+#endif
     [ClientCssResource(Constants.MultiHandleSliderName)]
     [ClientScriptResource("Sys.Extended.UI.MultiHandleSliderBehavior", Constants.MultiHandleSliderName)]
     [TargetControlType(typeof(TextBox))]
@@ -214,9 +216,11 @@ namespace AjaxControlToolkit {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [DefaultValue(null)]
         [NotifyParentProperty(true)]
-        [Editor(typeof(MultiHandleSliderTargetsEditor), typeof(UITypeEditor))]
+#if NETFRAMEWORK
+		[Editor(typeof(MultiHandleSliderTargetsEditor), typeof(UITypeEditor))]
+#endif
         public Collection<MultiHandleSliderTarget> MultiHandleSliderTargets {
-            get {
+        get {
                 if(DesignMode)
                     return new Collection<MultiHandleSliderTarget>();
 

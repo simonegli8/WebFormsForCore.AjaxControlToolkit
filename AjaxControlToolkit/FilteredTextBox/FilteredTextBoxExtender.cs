@@ -7,16 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// FFilteredTextBox is an extender that either allows users to enter only characters 
-    /// that you define into a text box or prevents users from entering specified characters.
-    /// </summary>
-    /// <remarks>
-    /// Note that as the extender relies on JavaScript, you should never assume that data that is sent 
-    /// to the server consists only of allowed characters.
-    /// Always perform server-side validation check on data that is sent from the client.
-    /// </remarks>
-    [Designer(typeof(FilteredTextBoxExtenderDesigner))]
+	/// <summary>
+	/// FFilteredTextBox is an extender that either allows users to enter only characters 
+	/// that you define into a text box or prevents users from entering specified characters.
+	/// </summary>
+	/// <remarks>
+	/// Note that as the extender relies on JavaScript, you should never assume that data that is sent 
+	/// to the server consists only of allowed characters.
+	/// Always perform server-side validation check on data that is sent from the client.
+	/// </remarks>
+#if NETFRAMEWORK
+	[Designer(typeof(FilteredTextBoxExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.FilteredTextBoxBehavior", Constants.FilteredTextBoxName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [TargetControlType(typeof(TextBox))]

@@ -7,10 +7,12 @@ using System.Web.UI.HtmlControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// The RoundedCorners extender applies rounded corners to existing elements.
-    /// </summary>
-    [Designer(typeof(RoundedCornersExtenderDesigner))]
+	/// <summary>
+	/// The RoundedCorners extender applies rounded corners to existing elements.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(RoundedCornersExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.RoundedCornersBehavior", Constants.RoundedCornersName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [TargetControlType(typeof(WebControl))]

@@ -18,9 +18,11 @@ namespace AjaxControlToolkit {
     [ClientCssResource(Constants.TabsName)]
     [ClientScriptResource("Sys.Extended.UI.TabPanel", Constants.TabsName)]
     [ToolboxItem(false)]
-    [Designer(typeof(TabPanelDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(TabPanelDesigner))]
+#endif
     public class TabPanel : ScriptControlBase {
-        bool _active;
+    bool _active;
         ITemplate _contentTemplate;
         ITemplate _headerTemplate;
         TabContainer _owner;

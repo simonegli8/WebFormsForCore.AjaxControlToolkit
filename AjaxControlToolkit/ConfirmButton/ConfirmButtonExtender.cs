@@ -15,7 +15,9 @@ namespace AjaxControlToolkit {
     /// If the user clicks OK, the button or link functions normally.
     /// If the user does not click OK, the click event is trapped and the button does not perform its default submit behavior.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(ConfirmButtonExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.ConfirmButtonBehavior", Constants.ConfirmButtonName)]
     [TargetControlType(typeof(IButtonControl))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.ConfirmButtonName + Constants.IconPostfix)]

@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,3 +13,4 @@ namespace AjaxControlToolkit.Design {
         delegate string GetDynamicContent(string contextKey);
     }
 }
+#endif

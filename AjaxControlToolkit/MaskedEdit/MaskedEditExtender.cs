@@ -8,16 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// MaskedEdit is an ASP.NET AJAX extender that attaches to the TextBox control to restrict what text that
-    /// can be entered. MaskedEdit applies a mask to the input that permits only certain types of characters/text
-    /// to be entered. The supported data formats are: Number, Date, Time, and DateTime.
-    /// </summary>
-    /// <remarks>
-    /// MaskedEdit uses culture settings specified in the CultureName property. If none of these settings is specified,
-    /// the culture setting will be the same as the page: English (United States).
-    /// </remarks>
-    [Designer(typeof(MaskedEditExtenderDesigner))]
+	/// <summary>
+	/// MaskedEdit is an ASP.NET AJAX extender that attaches to the TextBox control to restrict what text that
+	/// can be entered. MaskedEdit applies a mask to the input that permits only certain types of characters/text
+	/// to be entered. The supported data formats are: Number, Date, Time, and DateTime.
+	/// </summary>
+	/// <remarks>
+	/// MaskedEdit uses culture settings specified in the CultureName property. If none of these settings is specified,
+	/// the culture setting will be the same as the page: English (United States).
+	/// </remarks>
+#if NETFRAMEWORK
+	[Designer(typeof(MaskedEditExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.MaskedEditBehavior", Constants.MaskedEditValidatorName)]
     [ClientScriptResource("Sys.Extended.UI.MaskedEditBehavior", Constants.MaskedEditName)]
     [RequiredScript(typeof(CommonToolkitScripts))]

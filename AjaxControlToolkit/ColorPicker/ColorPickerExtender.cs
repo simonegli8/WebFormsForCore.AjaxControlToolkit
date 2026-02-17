@@ -19,7 +19,9 @@ namespace AjaxControlToolkit {
     [ClientCssResource(Constants.ColorPickerName)]
     [ClientScriptResource("Sys.Extended.UI.ColorPickerBehavior", Constants.ColorPickerName)]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.ColorPickerName + Constants.IconPostfix)]
+#if NETFRAMEWORK
     [Designer(typeof(ColorPickerExtenderDesigner))]
+#endif
     public class ColorPickerExtender : ExtenderControlBase {
         /// <summary>
         /// Specifies whether or not ColorPicker behavior is available for the current element.

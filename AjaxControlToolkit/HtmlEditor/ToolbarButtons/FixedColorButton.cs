@@ -75,12 +75,14 @@ namespace AjaxControlToolkit.HtmlEditor.ToolbarButtons {
             base.OnPreRender(e);
         }
 
-        internal override void CreateChilds(DesignerWithMapPath designer) {
+#if NETFRAMEWORK
+		internal override void CreateChilds(DesignerWithMapPath designer) {
             if(MethodButton != null)
                 MethodButton._designer = designer;
             Content.Clear();
             base.CreateChilds(designer);
         }
+#endif
 
         protected override void DescribeComponent(ScriptComponentDescriptor descriptor) {
             base.DescribeComponent(descriptor);

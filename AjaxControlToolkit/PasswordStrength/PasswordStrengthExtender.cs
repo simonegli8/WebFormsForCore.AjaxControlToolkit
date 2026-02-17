@@ -13,7 +13,9 @@ namespace AjaxControlToolkit {
     /// The PasswordStrength extender shows the strength of the password in the TextBox and updates itself as a user types the password.
     /// </summary>
     [TargetControlType(typeof(TextBox))]
-    [Designer(typeof(PasswordStrengthExtenderDesigner))]
+#if NETFRAMEWORK
+	[Designer(typeof(PasswordStrengthExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.PasswordStrengthExtenderBehavior", Constants.PasswordStrengthName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ToolboxBitmap(typeof(ToolboxIcons.Accessor), Constants.PasswordStrengthName + Constants.IconPostfix)]

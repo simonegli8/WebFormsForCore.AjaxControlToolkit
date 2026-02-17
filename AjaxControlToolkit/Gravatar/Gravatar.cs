@@ -12,11 +12,13 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// The Gravatar control is an ASP.NET AJAX Control Toolkit control that enables you to use gravatar images on your web forms.
-    /// Gravatar is a Globally Recognized Avatar provided by Gravatar.com. 
-    /// </summary>
-    [Designer(typeof(GravatarDesigner))]
+	/// <summary>
+	/// The Gravatar control is an ASP.NET AJAX Control Toolkit control that enables you to use gravatar images on your web forms.
+	/// Gravatar is a Globally Recognized Avatar provided by Gravatar.com. 
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(GravatarDesigner))]
+#endif
     [ToolboxData("<{0}:Gravatar runat=\"server\"></{0}:Gravatar>")]
     [RequiredScript(typeof(ScriptControlBase), 1)]
     [RequiredScript(typeof(CommonToolkitScripts), 2)]

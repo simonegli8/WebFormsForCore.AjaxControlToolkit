@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System.Security.Permissions;
 using System.Web.UI.Design;
 
@@ -16,3 +17,4 @@ namespace AjaxControlToolkit {
     }
 
 }
+#endif

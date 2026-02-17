@@ -135,9 +135,11 @@ namespace AjaxControlToolkit.HtmlEditor.ToolbarButtons {
                 var path = folder + name + "." + ext;
                 var fileName = String.Empty;
 
-                if(IsDesign && _designer != null)
+#if NETFRAMEWORK
+				if (IsDesign && _designer != null)
                     fileName = _designer.MapPath(path);
                 else
+#endif
                     fileName = HttpContext.Current.Server.MapPath(path);
 
                 if(fileName != null)

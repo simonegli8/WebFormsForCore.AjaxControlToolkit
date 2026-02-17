@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using System;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
@@ -36,3 +37,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

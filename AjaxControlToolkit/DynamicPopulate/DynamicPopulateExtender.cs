@@ -10,10 +10,12 @@ using System.Web.UI.WebControls;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// DynamicPopulate is an extender that replaces the control content with the result of the Web service or a page method call.
-    /// </summary>
-    [Designer(typeof(DynamicPopulateExtenderDesigner))]
+	/// <summary>
+	/// DynamicPopulate is an extender that replaces the control content with the result of the Web service or a page method call.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(DynamicPopulateExtenderDesigner))]
+#endif
     [RequiredScript(typeof(CommonToolkitScripts))]
     [ClientScriptResource("Sys.Extended.UI.DynamicPopulateBehavior", Constants.DynamicPopulateName)]
     [TargetControlType(typeof(WebControl))]

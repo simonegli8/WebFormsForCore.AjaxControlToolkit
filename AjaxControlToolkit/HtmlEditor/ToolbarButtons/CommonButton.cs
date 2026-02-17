@@ -18,8 +18,9 @@ namespace AjaxControlToolkit.HtmlEditor.ToolbarButtons {
         Collection<Control> _exportedControls;
         bool _wasPreRender;
         bool _ignoreTab;
-        internal DesignerWithMapPath _designer;
-
+#if NETFRAMEWORK
+		internal DesignerWithMapPath _designer;
+#endif
         protected CommonButton(HtmlTextWriterTag tag)
             : base(false, tag) {
             base.CssClass = "ajax__htmleditor_toolbar_button";
@@ -131,11 +132,13 @@ namespace AjaxControlToolkit.HtmlEditor.ToolbarButtons {
             base.Render(writer);
         }
 
-        internal virtual void CreateChilds(DesignerWithMapPath designer) {
+#if NETFRAMEWORK
+		internal virtual void CreateChilds(DesignerWithMapPath designer) {
             _designer = designer;
             Controls.Clear();
             CreateChildControls();
         }
+#endif
     }
 
 }

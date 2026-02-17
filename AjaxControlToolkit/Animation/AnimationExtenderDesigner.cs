@@ -1,3 +1,4 @@
+#if NETFRAMEWORK
 using AjaxControlToolkit.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Web.UI;
@@ -10,3 +11,4 @@ namespace AjaxControlToolkit.Design {
 
 }
 
+#endif

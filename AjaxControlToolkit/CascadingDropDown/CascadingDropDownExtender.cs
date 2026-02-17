@@ -18,7 +18,9 @@ namespace AjaxControlToolkit {
     /// Each time selection of one DropDownList control changes, CascadingDropDown makes a call 
     /// to a specified web service to retrieve the list of values for the next DropDownList in the set.
     /// </summary>
+#if NETFRAMEWORK
     [Designer(typeof(CascadingDropDownExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.CascadingDropDownBehavior", Constants.CascadingDropDownName)]
     [RequiredScript(typeof(CommonToolkitScripts))]
     [TargetControlType(typeof(ListBox))]

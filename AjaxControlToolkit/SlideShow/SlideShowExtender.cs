@@ -7,11 +7,13 @@ using AjaxControlToolkit.Design;
 
 namespace AjaxControlToolkit {
 
-    /// <summary>
-    /// SlideShow is an extender that targets image controls and dynamically shows
-    /// each image for a certain amount of time.
-    /// </summary>
-    [Designer(typeof(SlideShowExtenderDesigner))]
+	/// <summary>
+	/// SlideShow is an extender that targets image controls and dynamically shows
+	/// each image for a certain amount of time.
+	/// </summary>
+#if NETFRAMEWORK
+	[Designer(typeof(SlideShowExtenderDesigner))]
+#endif
     [ClientScriptResource("Sys.Extended.UI.SlideShowBehavior", Constants.SlideShowName)]
     [ClientCssResource(Constants.SlideShowName)]
     [TargetControlType(typeof(System.Web.UI.WebControls.Image))]

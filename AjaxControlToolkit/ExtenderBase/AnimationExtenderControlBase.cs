@@ -16,7 +16,9 @@ namespace AjaxControlToolkit {
         // Sequence of animation descriptions
         [PersistenceMode(PersistenceMode.InnerProperty)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+#if NETFRAMEWORK
+		[Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+#endif
         [TypeConverter(typeof(MultilineStringConverter))]
         [ExtenderControlProperty()]
         public string Animations {
