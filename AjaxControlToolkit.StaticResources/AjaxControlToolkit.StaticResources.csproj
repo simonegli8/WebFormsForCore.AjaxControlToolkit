@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <ProjectGuid>{820694DF-C225-46B6-BA38-C5FEFBD79AEB}</ProjectGuid>
-        <TargetFrameworks>net48;net10.0</TargetFrameworks>
+        <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
         <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GlobalOutputPath>..\bin\$(Configuration)\</GlobalOutputPath>
