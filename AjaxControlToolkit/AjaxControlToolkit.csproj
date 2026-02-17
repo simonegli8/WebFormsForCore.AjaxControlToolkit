@@ -68,9 +68,9 @@
         <Reference Include="System.Web.Extensions.Design" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.4.2" />
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Extensions" Version="1.4.2" />-->
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.4.2" />
+        <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web" Version="1.4.4" />
+        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Extensions" Version="1.4.4" />-->
+        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Configuration" Version="1.4.4" />
         <!--<ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />-->
         <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
