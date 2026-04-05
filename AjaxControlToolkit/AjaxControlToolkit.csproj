@@ -76,7 +76,7 @@
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) == 'net8.0'">
-        <PackageReference Include="System.Drawing.Common" Version="8.0.20" Aliases="Legacy" />
+        <PackageReference Include="System.Drawing.Common" Version="8.0.0" Aliases="Legacy" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) == 'net10.0'">
         <PackageReference Include="System.Drawing.Common" Version="10.0.0" Aliases="Legacy" />
