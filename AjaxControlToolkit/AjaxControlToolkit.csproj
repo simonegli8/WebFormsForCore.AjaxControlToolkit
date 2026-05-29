@@ -38,8 +38,8 @@
         <RepositoryUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>WebForms;porting WebForms;NET Core;NET 10</PackageTags>
-        <AssemblyVersion>10.0.23.0</AssemblyVersion>
-        <FileVersion>10.0.23.0</FileVersion>
+        <AssemblyVersion>10.0.24.0</AssemblyVersion>
+        <FileVersion>10.0.24.0</FileVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeSymbols>true</IncludeSymbols>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -68,9 +68,9 @@
         <Reference Include="System.Web.Extensions.Design" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <!--<PackageReference Include="WebFormsForCore.Web" Version="1.5.4" />
-        <PackageReference Include="WebFormsForCore.Web.Extensions" Version="1.5.4" />-->
-        <PackageReference Include="WebFormsForCore.Configuration" Version="1.5.4" />
+        <!--<PackageReference Include="WebFormsForCore.Web" Version="1.5.5" />
+        <PackageReference Include="WebFormsForCore.Web.Extensions" Version="1.5.5" />-->
+        <PackageReference Include="WebFormsForCore.Configuration" Version="1.5.5" />
         <!--<ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />-->
         <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
