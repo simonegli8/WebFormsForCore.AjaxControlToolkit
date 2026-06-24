@@ -5,14 +5,13 @@
         <AssemblyOriginatorKeyFile>..\AjaxKey.snk</AssemblyOriginatorKeyFile>
         <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <DocumentationFile>..\bin\$(Configuration)\AjaxControlToolkit.XML</DocumentationFile>
-        <GlobalOutputPath>..\bin\$(Configuration)\</GlobalOutputPath>
+        <DocumentationFile>bin\$(Configuration)\AjaxControlToolkit.XML</DocumentationFile>
         <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
         <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
         <NoWarn>1591</NoWarn>
         <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
-        <OutputPath>$(GlobalOutputPath)</OutputPath>
-        <TargetDir>$(MSBuildProjectDirectory)\$(GlobalOutputPath)\</TargetDir>
+        <OutputPath>bin\$(Configuration)</OutputPath>
+        <TargetDir>$(MSBuildProjectDirectory)\$(OutputPath)\</TargetDir>
         <!--<PostBuildEvent>
             "$(TargetDir)LinkStaticResources"
             copy "$(TargetDir)AjaxControlToolkit.xml" ""$(TargetDir)\.."
@@ -82,9 +81,6 @@
     <ItemGroup Condition="$(TargetFramework) == 'net10.0'">
         <PackageReference Include="System.Drawing.Common" Version="10.0.0" Aliases="Legacy" />
     </ItemGroup>
-    <PropertyGroup Condition="$(TargetFramework) != 'net48'">
-        <OutputPath>..\bin\$(Configuration)\$(TargetFramework)</OutputPath>
-    </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
     </ItemGroup>
@@ -1075,7 +1071,7 @@
     <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
         <ItemGroup>
             <!-- Do not import System.Configuration.ConfigurationManager version 8 -->
-            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Configuration.ConfigurationManager' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\8\.0\..\\'))" />
+            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Configuration.ConfigurationManager' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\(8|9|10)\.0\..\\'))" />
             <!-- Do not import System.Web from dotnet -->
             <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Web' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\dotnet\\'))" />
             <!-- Do not import System.Drawing from dotnet -->

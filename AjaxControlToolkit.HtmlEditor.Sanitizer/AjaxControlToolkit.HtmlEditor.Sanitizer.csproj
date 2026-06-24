@@ -3,11 +3,9 @@
         <ProjectGuid>{4F19469B-3352-4D93-89E2-4B79FD7086A6}</ProjectGuid>
         <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <GlobalOutputPath>..\bin\$(Configuration)\</GlobalOutputPath>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>bin\$(Configuration)\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
         <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-        <OutputPath Condition="$(TargetFramework) == 'net48'">$(GlobalOutputPath)</OutputPath>
-        <OutputPath Condition="$(TargetFramework) != 'net48'">$(GlobalOutputPath)$(TargetFramework)\</OutputPath>
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>..\AjaxKey.snk</AssemblyOriginatorKeyFile>
         <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
