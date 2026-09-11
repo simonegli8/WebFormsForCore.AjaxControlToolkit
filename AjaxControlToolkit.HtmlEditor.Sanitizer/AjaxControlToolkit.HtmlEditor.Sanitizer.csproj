@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <ProjectGuid>{4F19469B-3352-4D93-89E2-4B79FD7086A6}</ProjectGuid>
-        <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
+        <TargetFrameworks>net48;net8.0;net10.0;net11.0</TargetFrameworks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <OutputPath>bin\$(Configuration)\</OutputPath>
         <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
