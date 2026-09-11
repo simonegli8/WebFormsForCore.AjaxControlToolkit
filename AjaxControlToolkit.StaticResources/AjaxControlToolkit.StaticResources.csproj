@@ -12,7 +12,7 @@
         <AssemblyOriginatorKeyFile>..\AjaxKey.snk</AssemblyOriginatorKeyFile>
         <RestoreSources>$(RestoreSources);../../../nupkg;https://api.nuget.org/v3/index.json</RestoreSources>
 
-        <PackageId>EstrellasDeEsperanza.WebFormsForCore.AjaxControlToolkit.StaticResources</PackageId>
+        <PackageId>WebFormsForCore.AjaxControlToolkit.StaticResources</PackageId>
         <Title>AjaxControlToolkit.StaticResources</Title>
         <Authors>simonegli8</Authors>
         <Company>Estrellas de Esperanza</Company>
@@ -24,8 +24,8 @@
         <RepositoryUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>WebForms;porting WebForms;NET Core;NET 8</PackageTags>
-        <AssemblyVersion>10.0.14.0</AssemblyVersion>
-        <FileVersion>10.0.14.0</FileVersion>
+        <AssemblyVersion>10.0.26.0</AssemblyVersion>
+        <FileVersion>10.0.26.0</FileVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeSymbols>true</IncludeSymbols>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -39,9 +39,9 @@
         <PackageReference Include="WebGrease" Version="1.6.0" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <!--<PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Optimization" Version="1.1.2-beta" />
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.Web.Infrastructure" Version="1.1.2-beta" />
-        <PackageReference Include="EstrellasDeEsperanza.WebFormsForCore.WebGrease" Version="1.1.2-beta" />-->
+        <!--<PackageReference Include="WebFormsForCore.Web.Optimization" Version="1.6.1 />
+        <PackageReference Include="WebFormsForCore.Web.Infrastructure" Version="1.6.1" />
+        <PackageReference Include="WebFormsForCore.WebGrease" Version="1.6.1" />-->
         <ProjectReference Include="..\..\WebFormsForCore.Web.Optimization\WebFormsForCore.Web.Optimization.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web.Infrastructure\WebFormsForCore.Web.Infrastructure.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.WebGrease\WebFormsForCore.WebGrease.csproj" />
