@@ -47,7 +47,7 @@
         <ProjectReference Include="..\..\WebFormsForCore.WebGrease\WebFormsForCore.WebGrease.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Antlr" Version="3.5.0.2" />
+        <PackageReference Include="Antlr3.Runtime" Version="3.5.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     </ItemGroup>
     <ItemGroup>
