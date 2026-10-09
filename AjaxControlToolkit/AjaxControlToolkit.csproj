@@ -69,7 +69,7 @@
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
         <!--<PackageReference Include="WebFormsForCore.Web" Version="1.6.1" />
         <PackageReference Include="WebFormsForCore.Web.Extensions" Version="1.6.1" />-->
-        <PackageReference Include="WebFormsForCore.Configuration" Version="1.6.4" />
+        <PackageReference Include="WebFormsForCore.Configuration" Version="1.6.5" />
         <!--<ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />-->
         <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
