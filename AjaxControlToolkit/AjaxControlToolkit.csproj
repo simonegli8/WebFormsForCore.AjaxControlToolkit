@@ -3,7 +3,7 @@
         <ProjectGuid>{676B3449-93F7-4102-8DF0-FB51911675D6}</ProjectGuid>
         <SignAssembly>True</SignAssembly>
         <AssemblyOriginatorKeyFile>..\AjaxKey.snk</AssemblyOriginatorKeyFile>
-        <TargetFrameworks>net48;net8.0;net10.0</TargetFrameworks>
+        <TargetFrameworks>net48;net8.0;net10.0;net11.0</TargetFrameworks>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <DocumentationFile>bin\$(Configuration)\AjaxControlToolkit.XML</DocumentationFile>
         <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
@@ -27,23 +27,12 @@
 
         <PackageId>WebFormsForCore.AjaxControlToolkit</PackageId>
         <Title>AjaxControlToolkit</Title>
-        <Authors>simonegli8</Authors>
-        <Company>Estrellas de Esperanza</Company>
         <Product>AjaxControlToolkit</Product>
         <Description>AjaxControlToolkit for WebFormsForCore</Description>
-        <Copyright>Estrellas de Esperanza</Copyright>
-        <PackageProjectUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/webformsforcore/WebFormsForCore.AjaxControlToolkit</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
         <PackageTags>WebForms;porting WebForms;NET Core;NET 10</PackageTags>
-        <AssemblyVersion>10.0.33.0</AssemblyVersion>
-        <FileVersion>10.0.33.0</FileVersion>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <IncludeSymbols>true</IncludeSymbols>
-        <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>false</EmbedUntrackedSources>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,20 +56,24 @@
         <Reference Include="System.Web.Extensions.Design" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) != 'net48'">
-        <!--<PackageReference Include="WebFormsForCore.Web" Version="1.6.8" />
-        <PackageReference Include="WebFormsForCore.Web.Extensions" Version="1.6.8" />
-        <PackageReference Include="WebFormsForCore.Configuration" Version="1.6.8" />-->
+        <!--<PackageReference Include="WebFormsForCore.Web" Version="1.7.0" />
+        <PackageReference Include="WebFormsForCore.Web.Extensions" Version="1.7.0" />
+        <PackageReference Include="WebFormsForCore.Configuration" Version="1.7.0" />-->
         <ProjectReference Include="..\..\WebFormsForCore.Configuration\WebFormsForCore.Configuration.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web.Extensions\WebFormsForCore.Web.Extensions.csproj" />
         <ProjectReference Include="..\..\WebFormsForCore.Web\WebFormsForCore.Web.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) == 'net8.0'">
         <PackageReference Include="System.Drawing.Common" Version="8.0.0" Aliases="Legacy" />
-        <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.4" />
+        <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.5" />
     </ItemGroup>
     <ItemGroup Condition="$(TargetFramework) == 'net10.0'">
         <PackageReference Include="System.Drawing.Common" Version="10.0.0" Aliases="Legacy" />
     </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework) == 'net11.0'">
+        <PackageReference Include="System.Drawing.Common" Version="$(netlib)" Aliases="Legacy" />
+    </ItemGroup>
+
     <ItemGroup>
         <Compile Include="..\SharedAssemblyInfo.cs" Link="Properties\SharedAssemblyInfo.cs" />
     </ItemGroup>
@@ -1071,7 +1064,7 @@
     <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
         <ItemGroup>
             <!-- Do not import System.Configuration.ConfigurationManager version 8 -->
-            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Configuration.ConfigurationManager' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\(8|9|10)\.0\..\\'))" />
+            <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Configuration.ConfigurationManager' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'(?i)system\.configuration\.configurationmanager\\'))" />
             <!-- Do not import System.Web from dotnet -->
             <ReferencePath Remove="%(Identity)" Condition="'%(FileName)' == 'System.Web' AND $([System.Text.RegularExpressions.Regex]::IsMatch(%(Identity),'\\dotnet\\'))" />
             <!-- Do not import System.Drawing from dotnet -->
